@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+//import ReportDispatcher from 'jest-jasmine2/build/jasmine/ReportDispatcher';
 
 function App() {
+  const [repositories, setRepositorie] = useState([
+
+    {id:1, name:'repo1'},
+    {id:2, name:'repo2'},
+    {id:3, name:'repo3'},
+    {id:4, name:'repo4'}
+
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    repositories.map(
+      function(repo){
+        return(<h1>{ `${repo.id} - ${repo.name}`}</h1>)
+      })
   );
 }
 
